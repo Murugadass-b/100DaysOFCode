@@ -1,0 +1,18 @@
+Write a Java program that takes an integer as input and checks if it's positive, negative, or zero. Print an appropriate message based on the input.
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num==0){
+            System.out.println("ZERO");
+        }
+        else if(num>0){
+            System.out.println("POSITIVE");
+        }
+        else if(num<0){
+            System.out.println("NEGATIVE");
+        }
+    }
+}
