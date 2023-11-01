@@ -1,3 +1,5 @@
+Write a Java program that takes a user input string and prints the length of the string.
+
 import java.util.Scanner;
 class Main{
     public static void main(String args[]){
