@@ -1,0 +1,13 @@
+Write a Java program that demonstrates the usage of bitwise AND, OR, and XOR operators on two integers. Print the results of each operation
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("AND: "+(a&b));
+        System.out.println("OR: "+(a|b));
+        System.out.println("XOR: "+(a^b));        
+    }
+}
