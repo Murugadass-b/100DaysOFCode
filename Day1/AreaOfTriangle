@@ -1,0 +1,12 @@
+Write a Java program that calculates and prints the area of a rectangle. Take the length and width of the rectangle as input from the user. Use the formula: area = length * width.
+
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        int w = sc.nextInt();
+        System.out.println(l*w);
+    }
+}
