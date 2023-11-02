@@ -1,0 +1,44 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        //count unique elements
+        int unique=0;
+        for(int i=0;i<n-1;i++){
+            boolean isUnique = true;
+            for(int j=0;j<i;j++){
+                if(a[i]==a[j]){
+                    isUnique = false;
+                    break;
+                }
+            }
+            if(isUnique)
+                unique++;
+        }
+        //creating new array to store unique elements
+        int uniqueArray[] = new int[unique];
+        //update unique element into unique array
+        int index=0;
+        for(int i=0;i<n;i++){
+            boolean uniq = true;
+            for(int j=0;j<i;j++){
+                if(a[i]==a[j]){
+                    uniq = false;
+                    break;
+                }
+            }
+            if(uniq){
+                uniqueArray[index++]=a[i];
+            }
+        }
+        
+        for(int i=0;i<unique;i++){
+            System.out.print(uniqueArray[i]+" ");
+        }
+    }
+}
