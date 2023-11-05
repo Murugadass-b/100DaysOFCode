@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        int m = sc.nextInt();
+        int b[] = new int[m];
+        for(int i=0;i<m;i++){
+            b[i] = sc.nextInt();
+        }
+        int c[] = new int[n+m];
+        for(int i=0;i<n;i++){
+            c[i] = a[i];
+        }
+        int k=n;
+        for(int i=0;i<m;i++){
+            c[k++] = b[i];   
+        }
+        for(int i=0;i<n+m;i++){
+            for(int j=i+1;j<n+m;j++){
+                if(c[i]>c[j]){
+                    int t = c[j];
+                    c[j] = c[i];
+                    c[i] = t;
+                }
+            }
+        }
+        for(int i=0;i<n+m;i++){
+            for(int j=i+1;j<n+m;j++){
+                if(c[i]==c[j]){
+                    c[j] = 0;
+                }
+            }
+        }
+        for(int i=0;i<n+m;i++){
+            if(c[i]!=0){
+            System.out.print(c[i]+" ");
+            }
+        }
+    }
+}
