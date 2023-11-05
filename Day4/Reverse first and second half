@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0;i<n;i++){
+            a[i] = sc.nextInt();
+        }
+        halfReverse(a,n);
+    }
+    public static void halfReverse(int a[],int n){
+        if(n%2==0){
+            int l1=0,l2=n/2;
+            int r1=n/2-1,r2=n-1;
+            while(l1<r1){
+                int t= a[l1];
+                a[l1] = a[r1];
+                a[r1] = t;
+                int t2= a[l2];
+                a[l2] = a[r2];
+                a[r2] = t2;
+                l1++;
+                l2++;
+                r1--;
+                r2--;
+            }
+        }
+        if(n%2!=0){
+            int l1=0,l2=n/2+1;
+            int r1=n/2-1,r2=n-1;
+            while(l1<r1){
+                int t= a[l1];
+                a[l1] = a[r1];
+                a[r1] = t;
+                int t2= a[l2];
+                a[l2] = a[r2];
+                a[r2] = t2;
+                l1++;
+                l2++;
+                r1--;
+                r2--;
+            }
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
