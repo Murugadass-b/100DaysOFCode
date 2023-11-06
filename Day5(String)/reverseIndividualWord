@@ -1,0 +1,24 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc =  new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(reverseIndividualWord(s));
+    }
+    public static String reverseIndividualWord(String s){
+        StringBuilder finalstr = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(c==' '){
+                finalstr = finalstr.append(temp).append(" ");
+                temp.setLength(0);
+            }
+            else{
+                temp.insert(0,c);
+            }
+        }
+        finalstr.append(temp);
+        return finalstr.toString();
+    }
+}
