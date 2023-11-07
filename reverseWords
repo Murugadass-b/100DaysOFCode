@@ -1,0 +1,27 @@
+ip:my name is mani
+op:mani is name my
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      Scanner sc = new Scanner(System.in);
+      String s = sc.nextLine();
+      System.out.println(reverseWords(s));
+    }
+    public static String reverseWords(String s){
+        StringBuffer finalstr = new StringBuffer();
+        StringBuffer temp = new StringBuffer();
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(c!=' '){
+                temp = temp.append(c);
+            }
+            else{
+                finalstr.insert(0,temp).insert(0," ");
+                temp.setLength(0);
+            }
+        }
+        finalstr.insert(0,temp);
+        return finalstr.toString();
+    }
+}
