@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        String s2 = sc.next();
+        int f=0;
+        for(char c:s.toCharArray()){
+            if(!(s2.contains(String.valueOf(c)))){
+                f++;
+            }
+        }
+        System.out.println((f==0)?"It is an anagram":"It is not an anagram");
+    }
+}
