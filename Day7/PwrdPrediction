@@ -1,0 +1,40 @@
+Write a program to predict the password to the given conditions
+
+Input Format
+
+drpw
+2
+
+Constraints
+
+input should be a string and a number to rotate.
+
+Output Format
+
+ftry
+
+for d next 2nd character is f, for r next 2nd character is t like wise all the characters.
+
+******************************************************************************************************************
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int n = sc.nextInt();
+        for(char c : s.toCharArray()){
+            if(Character.isLowerCase(c)){
+                char base = 'a';
+                System.out.print((char)(base+(c+n-base)%26));
+            }
+            else if(Character.isLowerCase(c)){
+                char base = 'A';
+                System.out.print((char)(base+(c+n-base)%26));
+            }
+        }
+    }
+}
