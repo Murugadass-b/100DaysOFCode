@@ -1,0 +1,24 @@
+ip:988998d998
+op:Invalid num
+
+ip:9889980998
+op:(988)998-0998
+
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.next();
+        format(num);
+    }
+    public static void format(String num){
+        num = num.replaceAll("[^\\d]","");
+        if(num.length()!=10){
+            System.out.println("Invalid num");
+        }
+        else{
+            System.out.println("("+num.substring(0,3)+")"+num.substring(3,6)+"-"+num.substring(6));
+        }
+    }
+}
