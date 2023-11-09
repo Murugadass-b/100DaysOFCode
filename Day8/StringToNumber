@@ -1,0 +1,23 @@
+ip:10
+  Zero One Two Three Four Five Six Seven Eight Nine
+op:0 1 2 3 4 5 6 7 8 9 
+import java.util.*;
+public class MyClass{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str[] = new String[n];
+        for(int i=0;i<n;i++){
+            str[i]=sc.next();
+            findString(str[i]);
+        }
+    }
+    public static void findString(String s){
+        String strs[]={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+        for(int i=0;i<strs.length;i++){
+            if(s.equals(strs[i])){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
