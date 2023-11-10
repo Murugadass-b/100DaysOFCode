@@ -1,0 +1,18 @@
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String num = sc.nextLine();
+		Pattern p = Pattern.compile("(0||91)?[6-9][0-9]{9}");
+		Matcher m = p.matcher(num);
+		if(m.find()){
+		    System.out.println("Valid num");
+		}
+		else{
+		    System.out.println("Invalid num");
+		}
+	}
+}
