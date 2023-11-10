@@ -1,0 +1,16 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+public class Main
+{
+	public static void main(String[] args) {
+		String sentence="it is reges that is mandatory which is often used in porblem solving";
+		Pattern p = Pattern.compile("is");
+		Matcher m=p.matcher(sentence);
+		int cnt=0;
+		while(m.find()){
+		    //System.out.print(m.group()+" ");
+		    cnt++;
+		}
+		System.out.println("the occurance of 'is' is "+cnt);
+	}
+}
