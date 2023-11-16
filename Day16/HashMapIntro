@@ -1,0 +1,25 @@
+ip:
+2
+ram 34
+babu 45
+
+op:
+{babu=45, ram=34}
+
+
+code:
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String,Integer> map= new HashMap<>();
+        int n = sc.nextInt();
+        for(int i=0;i<n;i++){
+            String name = sc.next();
+            int roll = sc.nextInt();
+            map.put(name,roll);
+        }
+        System.out.println(map);
+    }
+}
