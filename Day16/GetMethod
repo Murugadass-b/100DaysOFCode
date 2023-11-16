@@ -1,0 +1,29 @@
+ip:
+3
+1 ram
+2 bob
+3 sam
+
+op:
+1 ram
+2 bob
+3 sam
+
+code:
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer,String> map= new HashMap<>();
+        int n = sc.nextInt();
+        for(int i=0;i<n;i++){
+            int roll = sc.nextInt();
+            String name = sc.next();
+            map.put(roll,name);
+        }
+        for(int i=1;i<=n;i++){
+            System.out.println(i+" "+map.get(i));
+        }
+    }
+}
