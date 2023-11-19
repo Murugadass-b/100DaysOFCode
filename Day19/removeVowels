@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class countConsonants 
+{
+    public static void main(String[] args) 
+    {
+        HashMap<Character,Integer> map = new HashMap<>();
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        String vowels = "aeiou";
+        int val =0;
+        for(char i : str.toCharArray()){
+            if(vowels.contains(String.valueOf(i))){
+                map.put(i,val);
+            }
+        }
+        for(char i : map.keySet()){
+            System.out.print(i+" ");
+        }
+    }
+}
