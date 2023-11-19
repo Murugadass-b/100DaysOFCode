@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class maxOccuranceChar 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String,Integer> map = new HashMap<>();
+        String s = sc.next();
+        findMaxOccurance(s);
+    }
+    public static void findMaxOccurance(String s){
+        HashMap<Character,Integer> map = new HashMap<>();
+        for(char c : s.toCharArray()){
+            map.put(c,map.getOrDefault(c,0)+1);
+        }
+        int count =0;
+        for(char i : s.toCharArray()){
+            if(map.get(i)>count)
+                count = map.get(i);
+        }
+        for(char i : s.toCharArray()){
+            if(map.get(i)==count){
+                System.out.println(i);
+                break;
+            }
+        }
+    }
+}
