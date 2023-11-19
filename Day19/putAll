@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class putAll 
+{
+    public static void main(String[] args) 
+    {
+        HashMap<String,Integer> map = new HashMap<>();
+        map.put("one",1);
+        map.put("two",2);
+        map.put("three",3);
+        for(Map.Entry<String,Integer> entry : map.entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+        System.out.println("**********************");
+        HashMap<String,Integer> map2 = new HashMap<>();
+        map2.put("four",4);
+        map2.putAll(map);
+        for(Map.Entry<String,Integer> entry : map2.entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+    }
+}
