@@ -1,0 +1,28 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+public class MyClass {
+    public static void main(String args[]) {
+        HashMap<Integer,String> name = new HashMap<>();
+        name.put(1,"ram");
+        name.put(2,"bob");
+        name.put(3,"sam");
+        // System.out.println(name.get(2));
+        // System.out.println(name);
+        // name.remove(1);
+        // System.out.println(name);
+        // for(int i : name.keySet()){
+        //     System.out.println(i);
+        // }
+        // for(String i : name.values()){
+        //     System.out.println(i);
+        // }
+        
+        // for(Entry<Integer,String> entry: name.entrySet()){
+        //     System.out.printf("roll num: %d,",entry.getKey());
+        //     System.out.printf("Name: %s\n",entry.getValue());
+        // }
+        System.out.println(name.getOrDefault(0,"NO Such roll"));
+        System.out.println(name.containsKey(3));
+    }
+}
