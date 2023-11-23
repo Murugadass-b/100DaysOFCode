@@ -1,0 +1,11 @@
+import java.util.*;
+public class Program{
+    public static void main(String args[]){
+        Stack<Integer> stk = new Stack<>();
+        stk.push(3);
+        stk.push(89);
+        stk.push(34);
+        stk.push(9);
+        System.out.println("Element at the top of the stack is: "+stk.peek()+" \n"+stk);
+    }
+}
