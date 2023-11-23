@@ -1,0 +1,19 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        reverseString(s);
+    }
+    public static void reverseString(String str){
+        Stack<Character> stk = new Stack<>();
+        String revStr = "";
+        for(char c : str.toCharArray()){
+            stk.push(c);
+        }
+        while(!stk.isEmpty()){
+            revStr = revStr+stk.pop();
+        }
+        System.out.println(revStr);
+    }
+}
