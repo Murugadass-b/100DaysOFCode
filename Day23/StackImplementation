@@ -1,0 +1,26 @@
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Stack<Integer> stk = new Stack<>();
+        System.out.println("stack: "+stk);
+        pushElement(stk,0);
+        pushElement(stk,1);
+        pushElement(stk,2);
+        pushElement(stk,3);
+        System.out.println("*****POP****");
+        popElement(stk);
+        popElement(stk);
+        popElement(stk);
+        popElement(stk);
+    }
+    public static void pushElement(Stack stk,int x){
+        stk.push(x);
+        System.out.println("Push-> "+x);
+        System.out.println("stack: "+stk);
+    }
+    public static void popElement(Stack<Integer> stk){
+        int x = stk.pop();
+        System.out.println("Pop-> "+x+"\nStack: "+stk);
+    }
+}
