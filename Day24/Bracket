@@ -1,1 +1,35 @@
-
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        Stack<Character> stk = new Stack<>();
+        for(char c: s.toCharArray()){
+            switch(c){
+                case '(':
+                case '{':
+                case '[':
+                    stk.push(c);
+                    break;
+                case ')':
+                case '}':
+                case ']':
+                    if(!stk.isEmpty()){
+                        char ch= stk.pop();
+                        if(ch=='(' && c!=')'||
+                            ch=='{' && c!='}'||
+                            ch=='['&& c!=']'){
+                                System.out.println("Invalid bracket");
+                                return;
+                            }
+                    }else{
+                            System.out.println("Invalid bracket");
+                            return;
+                        }
+                        
+                
+            }
+        }
+        System.out.println((stk.isEmpty())?"Valid bracket":"Invalid bracket");
+    }
+}
