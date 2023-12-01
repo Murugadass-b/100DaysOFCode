@@ -1,0 +1,46 @@
+import java.io.*;
+
+import java.util.*;
+ 
+
+public class ArrayListDemo {
+
+    public static void main(String[] args)
+
+    {
+
+        // create an empty list with an initial
+
+        // capacity
+
+        List<String> list = new ArrayList<String>(5);
+ 
+
+        // use add() method to initially
+
+        // add elements in the list
+
+        list.add("Geeks");
+
+        list.add("For");
+
+        list.add("Geeks");
+
+       
+
+        // Add a new element at index 0
+
+        list.add(0, "Hello");
+
+       
+
+        // prints all the elements available in list
+
+        for (String str : list) {
+
+            System.out.print(str + " ");
+
+        }
+
+    }
+}
