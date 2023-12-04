@@ -1,0 +1,51 @@
+import java.util.*;
+public class Main{
+    public static void infixToPostfix(String str){
+        StringBuilder postfix  = new StringBuilder();
+        Stack<Character> stk = new Stack<>();
+        
+        for(char c: str.toCharArray()){
+            if(Character.isLetterOrDigit(c)){
+                postfix.append(c);
+            }else if(c == '('){
+                stk.push(c);
+            }else if(c== ')'){
+                while(!stk.isEmpty() && stk.peek()!='('){
+                    postfix.append(stk.pop());
+                }
+                stk.pop();
+            }
+            else{
+                while(!stk.isEmpty() && precedence(c) <=precedence(stk.peek())){
+                    postfix.append(stk.pop());
+                }
+                stk.push(c);
+            }
+        }
+        while(!stk.isEmpty()){
+            postfix.append(stk.pop());
+        }
+        System.out.println(postfix.toString());
+    }   
+        
+        private static int precedence(char op){
+            switch(op){
+                case '*':
+                case '/':
+                    return 1;
+                case '+':
+                case '-':
+                    return 0;
+                default:
+                    return -1;
+            }
+        }
+    
+    
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        infixToPostfix(s);
+    }
+    
+}
