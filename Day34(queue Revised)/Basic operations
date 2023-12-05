@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Queue<String> que = new LinkedList<>();
+        que.add("ram");
+        que.offer("bob");
+        que.offer("sam");
+        que.offer("ali");
+        que.add("pal");
+        Iterator ite = que.iterator();
+        System.out.println("Queue elements are:");
+        while(ite.hasNext()){
+            System.out.println(ite.next());
+        }
+        System.out.println("Head of the queue is: "+que.peek());
+        System.out.println("Remove: "+que.remove());
+        System.out.println("Remove: "+que.poll());
+        System.out.println("Head of the queue is: "+que.peek());
+        System.out.println("Final queue: "+que);
+        
+    }
+}
