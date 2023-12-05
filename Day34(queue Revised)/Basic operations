@@ -13,10 +13,29 @@ public class Main{
             System.out.println(ite.next());
         }
         System.out.println("Head of the queue is: "+que.peek());
+        System.out.println("Size of the queue is: "+que.size());
         System.out.println("Remove: "+que.remove());
         System.out.println("Remove: "+que.poll());
         System.out.println("Head of the queue is: "+que.peek());
+        System.out.println("Size of the queue is: "+que.size());
         System.out.println("Final queue: "+que);
         
     }
 }
+
+
+
+op:
+Queue elements are:
+ram
+bob
+sam
+ali
+pal
+Head of the queue is: ram
+Size of the queue is: 5
+Remove: ram
+Remove: bob
+Head of the queue is: sam
+Size of the queue is: 3
+Final queue: [sam, ali, pal]
