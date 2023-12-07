@@ -1,0 +1,40 @@
+op:
+1 --> 223 --> 43 --> null
+
+code:
+
+
+public class SinglyLinkedList{
+    private ListNode head;
+    private static class ListNode{
+        private int data;
+        private ListNode next;
+        
+        public ListNode(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    public void display(){
+        ListNode current = head;
+        while(current != null){
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+    
+    public static void main(String args[]){
+        SinglyLinkedList sll = new SinglyLinkedList();
+        sll.head = new ListNode(1);
+        ListNode sec = new ListNode(223);
+        ListNode third = new ListNode(43);
+        
+        sll.head.next = sec;
+        sec.next = third;
+        
+        sll.display();
+    }
+    
+}
