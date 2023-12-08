@@ -1,0 +1,103 @@
+op:
+23 --> 43 --> 45 --> null
+After Inserting node at first
+34 --> 23 --> 43 --> 45 --> null
+
+code:
+
+public class SinglyLinkedList{
+    private ListNode head;
+    
+    private static class ListNode{
+        private int data;
+        private ListNode next;
+        
+        private ListNode(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    public static void main(String args[]){
+        SinglyLinkedList sll =  new SinglyLinkedList();
+        sll.head = new ListNode(23);
+        ListNode second = new ListNode(43);
+        ListNode third = new ListNode(45);
+        
+        sll.head.next = second;
+        second.next = third;
+        
+        ListNode current = sll.head;
+        
+        while(current !=null){
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("null");
+        ListNode newNode = new ListNode(34);
+        newNode.next = sll.head;
+        sll.head = newNode;
+        
+        System.out.println("After Inserting node at first");
+        
+        current = sll.head;
+        
+        while(current !=null){
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("null");
+        
+    }
+    
+    
+}
+
+
+public class SinglyLinkedList{
+    private ListNode head;
+    
+    private static class ListNode{
+        private int data;
+        private ListNode next;
+        
+        private ListNode(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    public static void main(String args[]){
+        SinglyLinkedList sll =  new SinglyLinkedList();
+        sll.head = new ListNode(23);
+        ListNode second = new ListNode(43);
+        ListNode third = new ListNode(45);
+        
+        sll.head.next = second;
+        second.next = third;
+        
+        ListNode current = sll.head;
+        
+        while(current !=null){
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("null");
+        ListNode newNode = new ListNode(34);
+        newNode.next = sll.head;
+        sll.head = newNode;
+        
+        System.out.println("After Inserting node at first");
+        
+        current = sll.head;
+        
+        while(current !=null){
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("null");
+        
+    }
+    
+    
+}
