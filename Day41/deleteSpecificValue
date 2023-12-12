@@ -36,21 +36,30 @@ public class SinglyLinkedList{
     }
     
     public void deleteVal(int val){
-        ListNode current = head;
-        ListNode previous = null;
-        if(head.data== val){
-            current = head.next;
-            head = current;
-        }
+        // ListNode current = head;
+        // ListNode previous = null;
+        // if(head.data== val){
+        //     current = head.next;
+        //     head = current;
+        // }
         
-        while(current != null){
-            previous = current;
+        // while(current != null){
+        //     previous = current;
+        //     current = current.next;
+        //     if(current.data == val){
+        //         previous.next = current.next;
+        //         return;
+        //     }
+        // }
+        ListNode current = head;
+        ListNode temp = null;
+        while(current !=null & current.data != val){
+            temp = current;
             current = current.next;
-            if(current.data == val){
-                previous.next = current.next;
-                return;
-            }
         }
+        if(current == null)
+            return;
+        temp.next = current.next;
     }
     
     public static void main(String args[]){
