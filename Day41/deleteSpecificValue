@@ -1,0 +1,65 @@
+
+public class SinglyLinkedList{
+    private ListNode head;
+    
+    private static class ListNode{
+        private int data;
+        private ListNode next;
+        
+        private ListNode(int value){
+            this.data = value;
+            this.next = null;
+        }
+    }
+    
+    public void insert(int val){
+        ListNode newNode = new ListNode(val);
+        if(head == null){
+            head = newNode;
+        }else{
+            ListNode current = head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        
+    }
+    
+    public void display(){
+        ListNode current = head;
+        while(current != null){
+            System.out.print(current.data+" --> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+    
+    public void deleteVal(int val){
+        ListNode current = head;
+        ListNode previous = null;
+        if(head.data== val){
+            current = head.next;
+            head = current;
+        }
+        
+        while(current != null){
+            previous = current;
+            current = current.next;
+            if(current.data == val){
+                previous.next = current.next;
+                return;
+            }
+        }
+    }
+    
+    public static void main(String args[]){
+        SinglyLinkedList sll = new SinglyLinkedList();
+        sll.insert(57);
+        sll.insert(21);
+        sll.insert(32);
+        sll.display();
+        sll.deleteVal(32);        
+        sll.display();
+    }    
+}
