@@ -1,0 +1,43 @@
+op:
+5 2 7 3 5 
+
+code:
+public class Tree{
+    private TreeNode root;
+    static class TreeNode{
+        private TreeNode right;
+        private TreeNode left;
+        private int data;
+        public TreeNode(int data){
+            this.data = data;
+            this.right = null;
+            this.left = null;
+        }
+    }
+    public void createBinaryTree(){
+        TreeNode first = new TreeNode(5);
+        TreeNode second = new TreeNode(2);
+        TreeNode third = new TreeNode(3);
+        TreeNode fourth = new TreeNode(7);
+        TreeNode fifth = new TreeNode(5);
+        root = first;//first
+        root.left = second;//second<----root
+        root.right = third;//second<----root----->third
+        second.left = fourth;//fourth<---second<----root---->third
+        third.right = fifth;//fourth<-----sec<----root---->third---->fifth
+    }
+    
+    public void preOrderTraversal(TreeNode root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.data+" ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+    public static void main(String args[]){
+        Tree tr = new Tree();
+        tr.createBinaryTree();
+        tr.preOrderTraversal(tr.root);
+    }
+}
