@@ -1,0 +1,14 @@
+
+public class Tree{
+    private static TreeNode root;
+    static class TreeNode{
+        private TreeNode right;
+        private TreeNode left;
+        private int data;
+        public TreeNode(int data){
+            this.data = data;
+            this.right = null;
+            this.left = null;
+        }
+    }
+}
