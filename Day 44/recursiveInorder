@@ -1,0 +1,50 @@
+op:
+1 5 2 7 6 3 4 
+
+code:
+
+import java.util.*;
+public class Tree{
+    private TreeNode root;
+    static class TreeNode{
+        private TreeNode right;
+        private TreeNode left;
+        private int data;
+        public TreeNode(int data){
+            this.data = data;
+            this.right = null;
+            this.left = null;
+        }
+    }
+    public void createBinaryTree(){
+        TreeNode first = new TreeNode(7);
+        TreeNode second = new TreeNode(5);
+        TreeNode third = new TreeNode(6);
+        TreeNode fourth = new TreeNode(1);
+        TreeNode fifth = new TreeNode(2);
+        TreeNode sixth = new TreeNode(3);
+        TreeNode seventh = new TreeNode(4);
+        root = first;//                     7
+        root.left = second;//            5       6
+        root.right = third;//         1    2  3     4  
+        second.left = fourth;
+        second.right = fifth;
+        third.left = sixth;
+        third.right = seventh;
+    }
+    
+    public void recursiveInorder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        recursiveInorder(root.left);
+        System.out.print(root.data+" ");
+        recursiveInorder(root.right);
+    }
+    
+    public static void main(String args[]){
+        Tree tr = new Tree();
+        tr.createBinaryTree();
+        tr.recursiveInorder(tr.root);
+    }
+}
