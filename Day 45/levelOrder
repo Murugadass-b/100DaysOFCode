@@ -1,0 +1,54 @@
+import java.util.*;
+public class Tree{
+    private TreeNode root;
+    public class TreeNode{
+        private TreeNode right;
+        private TreeNode left;
+        private int data;
+        public TreeNode(int data){
+            this.data = data;
+            this.right = null;
+            this.left = null;
+        }
+    }
+    public void createTree(){
+        TreeNode first = new TreeNode(6);
+        TreeNode second = new TreeNode(3);
+        TreeNode third = new TreeNode(4);
+        TreeNode fourth = new TreeNode(1);
+        TreeNode fifth = new TreeNode(2);
+        TreeNode sixth = new TreeNode(8);
+        TreeNode seventh = new TreeNode(5);
+        root = first;//                                 6
+        root.left = second;//                   3               4
+        root.right = third;//               1       2       8       5
+        second.left = fourth;
+        second.right = fifth;
+        third.left = sixth;
+        third.right = seventh;
+    }
+    
+    public void levelOrder(){
+        if(root == null){
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            TreeNode temp = queue.poll();
+            System.out.print(temp.data+" ");
+            if(temp.left != null){
+                queue.offer(temp.left);
+            }
+            if(temp.right != null){
+                queue.offer(temp.right);
+            }
+        }
+    }
+    
+    public static void main(String args[]){
+        Tree tr = new Tree();
+        tr.createTree();
+        tr.levelOrder();
+    }
+}
