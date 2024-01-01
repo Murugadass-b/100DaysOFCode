@@ -1,4 +1,3 @@
-public class BinaryTree{
 import java.util.*;
 public class BinarySearchTree{
     private TreeNode root;
