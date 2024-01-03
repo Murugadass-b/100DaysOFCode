@@ -1,0 +1,22 @@
+LeetCode pnum: 118
+class Solution {
+
+    public List<Integer> generateRow(int r){
+        List<Integer> tempList = new ArrayList<>();
+        tempList.add(1);
+        long ans = 1;
+        for(int i=1;i<r;i++){
+            ans = ans*(r-i);
+            ans = ans/i;
+            tempList.add((int)ans);
+        }
+        return tempList;
+    }
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans = new ArrayList<>();
+        for(int row=1;row<=numRows;row++){
+            ans.add(generateRow(row));
+        }
+        return ans;
+    }
+}
