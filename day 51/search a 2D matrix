@@ -1,0 +1,44 @@
+leetcode num: 74
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+        //brute force
+        // for(int i=0;i<matrix.length;i++){
+        //     for(int j=0;j<matrix[0].length;j++){
+        //         if(matrix[i][j]==target){
+        //             return true;
+        //         }
+        //     }
+        // }
+        // return false;
+
+        //*** better solution */
+        int m = matrix.length;
+        int n = matrix[0].length;
+        // for(int i=0;i<matrix.length;i++){
+        //     if(matrix[i][0]<=target && matrix[i][n-1]>=target){
+        //         return binarySearch(matrix[i],target);
+        //     }
+        // }
+        // return false;
+
+        //optimal solution
+        int l = 0;
+        int h = (n*m)-1;
+        while(l<=h){
+            int mid = (l+h)/2;
+            int row = mid/n;
+            int col = mid%n;
+            if(matrix[row][col]==target){
+                return true;
+            }
+            if(matrix[row][col]<target){
+                l = mid+1;
+            }else{
+                h = mid-1;
+            }
+        }
+        return false;
+    }
+}
