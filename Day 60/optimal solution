@@ -1,0 +1,25 @@
+import java.util.HashMap;
+
+public class Solution {
+    public static int subarraysWithSumK(int []a, int b) {
+        // Write your code here
+        HashMap<Integer,Integer> map = new HashMap<>();
+        map.put(0, 1);
+        int xr=0;
+        int x;
+        int c=0;
+        for(int i=0;i<a.length;i++){
+            xr=xr^a[i];
+            x = xr^b;
+            if(map.containsKey(x)){
+                c+=map.get(x);
+            }
+            if(map.containsKey(xr)){
+                map.put(xr,map.get(xr)+1);
+            }else{
+                map.put(xr,1);
+            }
+        }
+        return c;
+    }
+}
