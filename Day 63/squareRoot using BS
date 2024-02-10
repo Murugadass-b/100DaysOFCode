@@ -1,4 +1,4 @@
-Lc:69
+Lc:69 
 class Solution {
     public int mySqrt(int x) {
         // For special cases when x is 0 or 1, return x.
