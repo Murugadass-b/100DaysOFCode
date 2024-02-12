@@ -1,2 +1,18 @@
+lc:7
 
-(x<0)?(-rev):(rev)
+class Solution {
+    public int reverse(int x) {
+        int n = Math.abs(x);
+        long rev =0;
+        while(n>0){
+            int dig = n%10;
+            rev = (rev*10)+dig;
+            n/=10;
+        }
+        if(rev>Integer.MAX_VALUE || rev<Integer.MIN_VALUE){
+            return 0;
+        }
+        rev = (x<0)?(-rev):(rev);
+        return (int)rev;
+    }
+}
