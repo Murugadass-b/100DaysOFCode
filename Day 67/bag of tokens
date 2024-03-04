@@ -1,0 +1,25 @@
+LC: 948
+class Solution {
+    public int bagOfTokensScore(int[] arr, int power) {
+        Arrays.sort(arr);
+        int score=0,maxScore =0;
+        int l = 0;
+        int r = arr.length-1;
+        while(l<=r){
+            if(arr[l]<=power){
+                power-=arr[l];
+                score+=1;
+                maxScore = Math.max(maxScore,score);
+                l++;
+            }else if(score>0){
+                power+=arr[r];
+                score-=1;
+                maxScore = Math.max(maxScore,score);
+                r--;
+            }else{
+                break;
+            }
+        }
+        return maxScore;
+    }
+}
