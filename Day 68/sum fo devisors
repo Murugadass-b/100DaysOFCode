@@ -1,0 +1,20 @@
+
+public class Solution {
+    public static int sumOfAllDivisors(int n){
+        // Write your code here.
+        int ans=0;
+        while(n>0){
+            int sum =0;
+            for(int i=1;i<=Math.sqrt(n);i++){
+                if(n%i==0){
+                    sum+=i;
+                    if(i!=n/i)
+                        sum+=n/i;
+                }
+            }
+            ans+= sum;
+            n--;
+        }
+        return ans;
+    }
+}
