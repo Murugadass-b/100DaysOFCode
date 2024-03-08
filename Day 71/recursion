@@ -1,0 +1,18 @@
+public class Solution {
+
+    public static void func(int i,int[] a,int x){
+            if(i>x)
+                return;
+            a[i-1]=i;
+            i++;
+            func(i,a,x);
+        }
+    public static int[] printNos(int x) {
+        // Write Your Code Here
+        int a[] = new int[x];
+        int i=1;
+        func(i,a,x);
+        
+        return a;
+    }
+}
