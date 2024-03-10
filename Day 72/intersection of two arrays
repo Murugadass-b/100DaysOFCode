@@ -25,3 +25,29 @@ class Solution {
         
     }
 }
+
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        ArrayList<Integer> arr1 = new ArrayList<Integer>();
+        for(int n:nums1){
+            if(!arr1.contains(n)){
+                arr1.add(n);
+            }
+        }
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        for(int num : nums2){
+            if(arr1.contains(num)){
+                ans.add(num);
+                arr1.remove(Integer.valueOf(num));
+            }
+        }
+        int[] result = new int[ans.size()];
+        int i=0;
+        for(int number:ans){
+            result[i++] = number;
+        }
+        return result;
+        
+    }
+}
