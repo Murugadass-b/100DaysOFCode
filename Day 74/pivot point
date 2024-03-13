@@ -1,0 +1,23 @@
+
+lc:2485
+class Solution {
+    public int factorial(int n){
+        return (n*(n+1))/2;
+    }
+    public int pivotInteger(int n) {
+        int isum=factorial(n);
+        int jsum = factorial(n)-factorial(n-1);
+        if(isum==jsum){
+                return n;
+        }
+        for(int i=n-1;i>=1 && isum>jsum;i--){
+            isum=factorial(i);
+            jsum = factorial(n)-factorial(i-1);
+            if(isum==jsum){
+                return i;
+            }
+        }
+    
+        return -1;
+    }
+}
